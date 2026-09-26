@@ -1,0 +1,19 @@
+---
+title: "P8105 Homework 1"
+author: "Stephanie Chuquipul Calderon"
+date: "2026-09-26"
+output: github_document
+---
+
+# Problem 1 
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+This dataset contains the following penguin species: Adelie, Gentoo, and Chinstrap. These penguins are from the islands of Torgersen, Biscoe, and Dream. The dataset also contains the bill length and depth in millimeters, flipper length in millimeters, body mass in grams, sex and year. 
+The penguin dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
+The mean flipper length is `r round(mean(penguins$flipper_length_mm, na.rm = TRUE), 1)` mm.
+
+
+# Problem 2
+
