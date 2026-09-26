@@ -33,6 +33,52 @@ ggplot2::ggsave (
 )
 ```
 
-
 # Problem 2
+
+```{r}
+set.seed(123)
+
+normal_sample = rnorm(10)
+greater_than_zero = normal_sample > 0
+greater_than_zero
+letter_labels = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J")
+letter_labels
+size_group = factor(c(
+  "small", "medium", "large", "small", "medium",
+  "large", "small", "medium", "large", "small"
+))
+size_group
+```
+
+```{r}
+homework1_df = data.frame(
+  normal_sample = normal_sample,
+  greater_than_zero = greater_than_zero,
+  letter_labels = letter_labels,
+  size_group = size_group
+)
+
+homework1_df
+mean(homework1_df$normal_sample)
+mean(homework1_df$greater_than_zero)
+mean(homework1_df$letter_labels)
+mean(homework1_df$size_group)
+```
+
+
+```{r convert-types, results='hide', warning=FALSE}
+as.numeric(homework1_df$greater_than_zero)
+as.numeric(homework1_df$letter_labels)
+as.numeric(homework1_df$size_group)
+```
+
+The mean of the numeric sample is about 0.075. The mean of the logical column is 0.5 because R counts TRUE as 1 and FALSE as 0; five of the ten values are TRUE. The means of the character and factor columns return NA because their values are categories rather than numbers. With as.numeric(), the logical values become 1s and 0s, while the letters become NA because they cannot be read as numbers. The factor becomes numeric codes for its three levels, but those codes are not measurements, so averaging them would not be meaningful.
+
+
+
+
+
+
+
+
 
